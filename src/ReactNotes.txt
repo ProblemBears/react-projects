@@ -8,3 +8,12 @@ REACT SUMMARY & CORE FEATURES
                                                 * Import with:  ** import SomeComponent from './components/SomeComponent'
                                                 
                                                 * THEN:         ** We can use the component with < SomeComponent />
+
+    -Working with "props" &                     * SCENARIO:     ** We need to pass in data to a component (ex: We need different titles for the same component spawned 3 times)
+     Dynamic Content:                           
+                                                * HOW:          ** Pass the values by defining attributes (they can be any name)
+                                                                        *** < SomeComponent someAttrib1="someVal" someAttrib2="SomeVal" />
+                                                                ** Accept the attributes by defining a props parameter in your component.
+                                                                        *** function SomeComponent(props) {} //props has those attributes as properties
+                                                                ** To use the properties we can't simply use props.someAttrib1 in JSX. WE HAVE TO WRAP DYNAMIC
+                                                                   CONTENT FROM JavaScript WITH {}
