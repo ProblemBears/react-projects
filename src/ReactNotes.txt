@@ -17,3 +17,12 @@ REACT SUMMARY & CORE FEATURES
                                                                         *** function SomeComponent(props) {} //props has those attributes as properties
                                                                 ** To use the properties we can't simply use props.someAttrib1 in JSX. WE HAVE TO WRAP DYNAMIC
                                                                    CONTENT FROM JavaScript WITH {}
+
+    -Handling Events:                           * SCENARIO:     ** We need to listen to a click on a Components button
+
+                                                * HOW:          ** PREREQ: The HTML elements in REACT are really just REACT components built into it
+                                                                ** The previous statement matters because we can add built-in attributes that don't exist in HTML
+                                                                   such as the:          onClick={ someFunctionDefinedElsewhere} //don't use () because it'll execute
+
+                                                * USEFUL:       * For functions that need to reference properties from props. You should define them inside of
+                                                                  the main Component.
