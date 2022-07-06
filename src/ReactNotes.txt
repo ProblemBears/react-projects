@@ -1,3 +1,10 @@
 REACT SUMMARY & CORE FEATURES
     -How React Works and                        * A Component is a regular JS function that returns something that can be rendered ( Ex: plain text, but usually JSX (JS HTML) )
      Understanding Components:                  * These components should reside in their own .js files and be exported in a CommonJS style (Ex: export default App;)
+
+    -Building & Re-Using Another                * CONVENTION:   ** Place new .js components in a ./src/components directory
+     Component:                                                 ** Component names should start with a capital letter (ex: function SomeComponent() {})
+
+                                                * Import with:  ** import SomeComponent from './components/SomeComponent'
+                                                
+                                                * THEN:         ** We can use the component with < SomeComponent />
