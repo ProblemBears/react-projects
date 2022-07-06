@@ -1,0 +1,3 @@
+REACT SUMMARY & CORE FEATURES
+    -How React Works and                        * A Component is a regular JS function that returns something that can be rendered ( Ex: plain text, but usually JSX (JS HTML) )
+     Understanding Components:                  * These components should reside in their own .js files and be exported in a CommonJS style (Ex: export default App;)

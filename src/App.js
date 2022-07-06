@@ -1,7 +1,13 @@
 function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <h1>My Todos</h1>
+      <div className="card">
+        <h2>TITLE</h2>
+        <div className="actions">
+          <button className="btn">Delete</button>
+        </div>
+      </div>
     </div>
   );
 }
