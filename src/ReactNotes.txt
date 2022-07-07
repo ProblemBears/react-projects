@@ -54,3 +54,29 @@ REACT SUMMARY & CORE FEATURES
                                                                     onClick that is built-in, we can call our props.onClick (remember though, onClick is just the name
                                                                     of the attribute we sent via our props, it does not have to be named onClick because it's not 
                                                                     built-in)
+
+   -Adding Routing:                             * DEFINITION    ** A special tool that watches changes in the URL and changes what's rendered on the screen based
+                                                  OF ROUTING:      on the URL change.
+
+                                                * INSTALLATION: ** npm install react-router-dom
+
+                                                * CONVENTION:   ** Put Components that signify pages that will be loaded in a ./src/pages directory
+                                                                ** Append "Page" in the name of the function that signifies a component. To make clear it's a Page Component.
+
+                                                * HOW:          1) To initialize a URL to be watched, in index.js (the location where we link React to the DOM) we:
+                                                                     ** import { BrowserRouter } from 'react-router-dom'
+                                                                     ** Then wrap our < App/> with <BrowserRouter> </BrowserRouter>
+
+                                                                2) Now we need to define the different URLS and which pages they load:
+                                                                     ** import { Routes, Route } from 'react-router-dom' 
+                                                                        in the .js file of the element that was wrapped (<App />)
+                                                                     ** The Route component defines different paths in the URL we want to listen to and which Component
+                                                                        should be loaded for these different paths. So also import all your Page Components.
+                                                                     ** Finally:
+                                                                           Wrap <Route> tags with <Routes> and for each <Route> tag we insert a page in the format:
+                                                                           <Route path="/somePath" element={<SomePage />} /> where somePath can be named anything, and
+                                                                           SomePage can be any page you want to render on this path
+                                                                                 ** We can add an 'exact' attribute to <Route> which prevents it from stopping to check
+                                                                                    for an exact match once a prefix type match is seen. (useful on "/" since it
+                                                                                    would prevent the search for a whole path since it stops at /)
+                                                                     
