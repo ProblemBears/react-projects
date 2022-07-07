@@ -24,5 +24,24 @@ REACT SUMMARY & CORE FEATURES
                                                                 ** The previous statement matters because we can add built-in attributes that don't exist in HTML
                                                                    such as the:          onClick={ someFunctionDefinedElsewhere} //don't use () because it'll execute
 
-                                                * USEFUL:       * For functions that need to reference properties from props. You should define them inside of
+                                                * USEFUL:       ** For functions that need to reference properties from props. You should define them inside of
                                                                   the main Component.
+
+    -Introducing State:                         * SCENARIO:     ** In order to change what's visible on the screen we need to change the State (ex: overlay open/closed)
+                                                
+                                                * HOW:          1) Import the function:     ** import {useState} from 'react';
+
+                                                                2) To ready the state,      ** Think of React State as a variable, managed by React.
+                                                                   the following is         ** const [modalIsOpen, setModalIsOpen] = useState(false);
+                                                                   inserted at the                      *** Initial Value = false
+                                                                   start of the                         *** Destructured [0] = The currently stored value
+                                                                   Component Function:                  *** Destructured [1] = A function that allows you to change [0]
+                                                                                                                **** We choose to call [1] instead of directly changing
+                                                                                                                     [0] because [1] reexecutes all of the Component
+                                                                                                                     function (hence, rerenders)
+                                                                                            ** Finally, after destructuring/naming the bidnings that were yielded by
+                                                                                               useState. Maybe on an onClick's handler function we can do:
+                                                                                                            setModalIsOpen(true);
+                                                                                               and somwhere in our return() statement we can use modalIsOpen with
+                                                                                               a conditional statement like the ternary (?:) in order to render some
+                                                                                               Components OR render null.
