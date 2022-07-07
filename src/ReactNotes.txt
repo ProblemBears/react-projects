@@ -45,3 +45,12 @@ REACT SUMMARY & CORE FEATURES
                                                                                                and somwhere in our return() statement we can use modalIsOpen with
                                                                                                a conditional statement like the ternary (?:) in order to render some
                                                                                                Components OR render null.
+
+    -Working w/ "Event Props"                   * SCENARIO:     ** Previously we used the JSX attribute onClick to Handle the event of clicking on a JSX Button.
+     (Passing Function As Props):                                  WE CAN NOT USE onClick on SELF MADE COMPONENTS AND EXPECT IT TO WORK because onClick is built into
+                                                                   JSX. We need to do something with the Function Pointer that was passed in props.
+
+                                                * HOW:          ** Our Self-Made Component may have a return statement that returns JSX, therefore, in it's
+                                                                    onClick that is built-in, we can call our props.onClick (remember though, onClick is just the name
+                                                                    of the attribute we sent via our props, it does not have to be named onClick because it's not 
+                                                                    built-in)
