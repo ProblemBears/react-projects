@@ -122,3 +122,34 @@ REACT SUMMARY & CORE FEATURES
                                                                                  </Card>
                                                                              Where the stuff that tags that get wrapped by <Card> go into props.children
                                                                3) Wrap whatever you need to have that consistent style with the Wrapper Component.
+
+   -Adding a Form:                              * SCENARIO:   ** We don't display things based on dummy code. Instead we usually submit things to a server using a form
+                                                                 and that server stores that submission in a database so that we could later retrieve it for display.
+
+                                                * EXAMPLE:     ** Here is how we might build a Form Component in REACT:
+                                                                        <Card>
+                                                                           <form className={classes.form}>
+                                                                              <div className={classes.control}>
+                                                                                 <label htmlFor="title">Meetup Title</label>
+                                                                                 <input type="text" required id="title" />
+                                                                              </div>
+                                                                              <div className={classes.control}>
+                                                                                 <label htmlFor="image">Meetup Title</label>
+                                                                                 <input type="url" required id="image" />
+                                                                              </div>
+                                                                              <div className={classes.control}>
+                                                                                 <label htmlFor="address">Address</label>
+                                                                                 <input type="url" required id="address" />
+                                                                              </div>
+                                                                              <div className={classes.control}>
+                                                                                 <label htmlFor="description">Description</label>
+                                                                                 <textarea id="description" required rows="5"></textarea>
+                                                                              </div>
+                                                                              <div className={classes.actions}>
+                                                                                 <button>Add Meetup</button>
+                                                                              </div>
+                                                                           </form>
+                                                                     </Card>
+                                                                     *** Notice the <Card> wrapper we created previously.
+
+   
