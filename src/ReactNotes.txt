@@ -96,3 +96,7 @@ REACT SUMMARY & CORE FEATURES
                                                                         ** Here someName is a JS object where all the CSS classes defined in the .css file are contained
                                                                            as properties
                                                                3) In element attributes do:     className={someName.classSelector}
+
+-Output Lists of Data:                       * HOW:            ** Use an array's builtin map()
+                                                               ** But we get a console error that says each child in a list should have a unique "key" prop. So fix w/:
+                                                                        key={element.id}     //as an attribute to what you're returning
