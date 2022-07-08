@@ -97,6 +97,28 @@ REACT SUMMARY & CORE FEATURES
                                                                            as properties
                                                                3) In element attributes do:     className={someName.classSelector}
 
--Output Lists of Data:                       * HOW:            ** Use an array's builtin map()
+   -Output Lists of Data:                       * HOW:         ** Use an array's builtin map()
                                                                ** But we get a console error that says each child in a list should have a unique "key" prop. So fix w/:
                                                                         key={element.id}     //as an attribute to what you're returning
+
+   -Building Wrapper Components                 * SCENARIO:    ** We don't want to make individual module.css styles for each component. If we want to share styles
+    w/ props.children:                                            it would be ideal to create a Wrapper Component to do it. This wrapper would have a singular module.css
+                                                                  that it would share to things that gets wrapped onto it like <div></div>
+
+                                                * HOW:         1) Create the directory:         ./src/components/ui
+                                                                     ** This is where our Wrapper Components for UI will reside.
+                                                               2) Create a regular Component that returns the following:
+                                                                     return ( 
+                                                                     <div className={classes.card}>
+                                                                        {props.children}
+                                                                     </div>
+                                                                     )
+                                                                     ** WE NEED TO SPECIFY props.children here because UNLIKE PASSING THROUGH ATTRIBUTES. THIS
+                                                                        TIME WE PASSED BY WRAPPING TAGS WITH THIS WRAPPER TAG
+                                                                     *** EX: Our Wrapper class that returns the thing above is called Card.
+                                                                             In some Component that uses this wrapper. It would use it as follows:
+                                                                                 <Card> 
+                                                                                    <div><button></button><img></div> 
+                                                                                 </Card>
+                                                                             Where the stuff that tags that get wrapped by <Card> go into props.children
+                                                               3) Wrap whatever you need to have that consistent style with the Wrapper Component.
