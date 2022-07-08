@@ -79,6 +79,7 @@ REACT SUMMARY & CORE FEATURES
                                                                                  ** We can add an 'exact' attribute to <Route> which prevents it from stopping to check
                                                                                     for an exact match once a prefix type match is seen. (useful on "/" since it
                                                                                     would prevent the search for a whole path since it stops at /)
+
    -Adding Links & Navigation:                  * SCENARIO:    ** Now that we have our Router working we don't want to have to navigate via the URL bar. Therefore,
                                                                   we want to add a navigation bar that Links to these different paths. The regular <a> tag may work but
                                                                   it would reload the page. This is why we wrap our links with <Link></Link> instead of <a>
@@ -86,3 +87,12 @@ REACT SUMMARY & CORE FEATURES
                                                 * HOW:         1) import { Link } from "react-router-dom"; //In a new Component .js representing the NavBar
                                                                2) <Link to="/"> SomeText </Link> //where to should link to paths we specified in our <Routers>
                                                                3) Import and Add this new NavBar Component Above our <Routes> in <App>
+
+   -Styling w/ CSS Modules:                     * SCENARIO:    ** We want to pair a .css file with a specific REACT component. This is useful when we don't want
+                                                                  the CSS linked into the HTML to be global (which may be large) 
+
+                                                * HOW:         1) Name the CSS file as follows:    ComponentsName.module.css     //and put it in the same directory
+                                                               2) import someName from "./ComponentsName.module.css"
+                                                                        ** Here someName is a JS object where all the CSS classes defined in the .css file are contained
+                                                                           as properties
+                                                               3) In element attributes do:     className={someName.classSelector}
