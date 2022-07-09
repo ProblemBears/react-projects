@@ -174,3 +174,18 @@ REACT SUMMARY & CORE FEATURES
                                                 *HOW:          ** Here we'll use Google Firebase to act as a dummy server
                                                                   To do this we go to Project Shortcuts > Realtime Database > Keep Defaults (except Test Mode)
                                                                   and copy the URL
+
+   -Sending a POST Request:                     *HOW:          ** We can use the fetch() function (a builtin JS function) (we could install the library axios)
+                                                               ** So in our SubmitHandler() function we do:
+                                                                     1) fetch('URL') //By default fetch sends a GET Request
+                                                                           **Firebase creates new tables based on things you append after the URL
+                                                                           **Firabse requires you add .json at the end of the link
+                                                                     2) TO SET IT AS A POST REQUEST WE ADD THE FOLLOWING SECOND ARGUMENT
+                                                                        fetch('URL', 
+                                                                              {
+                                                                                 method: 'POST', 
+                                                                                 body: JSON.stringify(meetupData),
+                                                                                 headers: { 'Content-Type': 'application/json'}
+                                                                              }
+                                                                        );
+                                                               ** Check firebase and the data should be there
