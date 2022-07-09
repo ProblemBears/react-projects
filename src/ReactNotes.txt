@@ -189,3 +189,15 @@ REACT SUMMARY & CORE FEATURES
                                                                               }
                                                                         );
                                                                ** Check firebase and the data should be there
+
+   -Navigating Programmatically:                *SCENARIO:     ** To give the user feedback that the prior POST Request worked we probably may want to navigate
+                                                                  away from the page. To do this we trigger navigation Programmatically as opposed to when we clicked
+                                                                  nav links in our nav bar
+
+                                                *HOW:          1) import { useNavigate } from 'react-router-dom'
+
+                                                               2) const navigate  = useNavigate(); //an objects that allows us to manipulate the browser history
+
+                                                               3) Since fetch returns a promise we can use then() as follows:
+                                                                     fetch(//our previous code).then( () => { navigate('/') } )
+                                                                  Which replaces the current Route Link witht he Home Link AFTER the fetch request succeeds 
