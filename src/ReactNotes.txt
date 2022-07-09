@@ -151,5 +151,19 @@ REACT SUMMARY & CORE FEATURES
                                                                            </form>
                                                                      </Card>
                                                                      *** Notice the <Card> wrapper we created previously.
+                                                                     *** A button in a form calls the onSubmit event when it is clicked (catchable w/ onSubmit)
 
-   
+   -Getting User Input &                        *HOW:          ** To handle form submission we have to do 3 things:
+    Handling Form Submission:                                        1) Listen to the form submission
+                                                                              ** In the <form> tag add the attribute - onSubmit={someFunc}
+                                                                     2) Prevent the browser default (which sends an http request automatically, hence reloading)
+                                                                              ** In the handler function do - e.preventDefault();
+                                                                     3) Read the form values
+                                                                              ** Refs: References to DOM elements
+                                                                              ** To make connections between bindings and JSX elements we do:
+                                                                                    a) import { useRef } from 'react';
+                                                                                    b) const titleInputRef = useRef(); //You can define more than one as needed
+                                                                                    c) <input type='text' id='title' ref={titleInputRef}>
+                                                                              ** Finally we can make bindings of the final result of the refs with
+                                                                                 someRef.current.value and put all of them into an object with keys and these Refs
+                                                                                 as values.
