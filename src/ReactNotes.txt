@@ -201,3 +201,5 @@ REACT SUMMARY & CORE FEATURES
                                                                3) Since fetch returns a promise we can use then() as follows:
                                                                      fetch(//our previous code).then( () => { navigate('/') } )
                                                                   Which replaces the current Route Link witht he Home Link AFTER the fetch request succeeds 
+   -Getting Started w/
+    Fetching Data:
