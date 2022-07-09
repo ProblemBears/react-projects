@@ -167,3 +167,10 @@ REACT SUMMARY & CORE FEATURES
                                                                               ** Finally we can make bindings of the final result of the refs with
                                                                                  someRef.current.value and put all of them into an object with keys and these Refs
                                                                                  as values.
+
+   -Preparing the App for HTTP:                 *SCENARIO:     ** We don't want any sensitive data interaction to be wired into the client-side. We should therefore make
+                                                                  requests to server-side APIS
+                                                
+                                                *HOW:          ** Here we'll use Google Firebase to act as a dummy server
+                                                                  To do this we go to Project Shortcuts > Realtime Database > Keep Defaults (except Test Mode)
+                                                                  and copy the URL
