@@ -223,3 +223,13 @@ REACT SUMMARY & CORE FEATURES
                                                                                  *** SO THE RULE OF THUMB IS:
                                                                                      In your Dependencies Array you should add all external values your Effect function
                                                                                      relies on. (In this case there isn't any external values)
+
+   -Intoducing React Component:                 *DEFINITION:   ** React's built-in global state solution. (like redux)
+
+                                                *CONVENTION:   ** Create a folder './src/store' and store files of the type 'someName-context.js'
+
+                                                *EXAMPLE:      ** 'favorites-context.js' in the directory above
+
+                                                *NOTES:        ** We will Wrap the Context file around everything.
+                                                               ** useState() works better if you pass a function that changes the state (otherwise it gets queued in REACT)
+                                                               ** In this component you can define handler functions 
