@@ -201,5 +201,25 @@ REACT SUMMARY & CORE FEATURES
                                                                3) Since fetch returns a promise we can use then() as follows:
                                                                      fetch(//our previous code).then( () => { navigate('/') } )
                                                                   Which replaces the current Route Link witht he Home Link AFTER the fetch request succeeds 
-   -Getting Started w/
-    Fetching Data:
+
+   -Getting Started w/                          *IMPORTANT:    ** We can't make a REACT component into an async function, because the return must be something 
+    Fetching Data:                                                renderable. NOT A PROMISE. SO WE SHOULD RENDER A LOADING SYMBOL FIRST AND THEN WHEN A REQUEST
+                                                                  PROMISE FOR OUR DATA RESOLVES WE CAN CHANGE THE LOADING SYMBOL with REACTS useState().
+
+                                                *PROBLEM:      ** In our Fetch's second load (where the data is passed) we call for a state change. The problem
+                                                                  with this is that it causes us to run the entire function again WHICH THEREFORE CALLS FOR ANOTHER
+                                                                  FETCH AND IT CHANGES THE STATE AGAIN ETC... CAUSING AN INFINITE LOOP!!!!!
+                                                                  WE FIX THIS AS FOLLOWS...
+
+   -Using the useEffect()                       *SOLUTION:     ** import {useEffect} from 'react' -
+    Hook:                                                               A hook that allows you to tun some code under certain conditions. In the case of our fetch()
+                                                                        in a Component, WE CAN USE useEffect() TO RESTRICT IT BY ADDING CONDITIONS ON WHEN IT SHOULD RUN
+                                                               ** useEffect( function, array) - 
+                                                                        ** function - where we place the code snippet we want REACT to execute on our behalf
+                                                                        ** array - 
+                                                                                 *** If no array argument is specified then REACT calls it with the Component's execution.
+                                                                                 *** If the array is specified but has no added dependencies. It only runs one time
+                                                                                     when it was initially executed because there are no dependencies to track.
+                                                                                 *** SO THE RULE OF THUMB IS:
+                                                                                     In your Dependencies Array you should add all external values your Effect function
+                                                                                     relies on. (In this case there isn't any external values)
